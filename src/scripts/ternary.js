@@ -67,14 +67,37 @@ const ternary = {
       <h1 class = "t-border">Make new event</h1>
         <section class = "form">
           <form action="" class = registerForm>
-            <input id = "regUserName" type="text" placeholder = "City To Visit" required>
-            <input id = "regEmail" type="email" placeholder = "Location To Visit" required>
-            <input id = "regPassword" type="password" placeholder = "Expected Cost" required>
+            <input id = "city-to-visit" type="text" placeholder = "City To Visit" required>
+            <input id = "location-to-visit" type="email" placeholder = "Location To Visit" required>
+            <input id = "expected-cost" type="password" placeholder = "Expected Cost" required>
+            <p>visa?</p>
+            <select id="visa-required">
+                <option>true</option>
+                <option>false</option>
+            </select>
             <button id = "registerButton">Create Experience</button>
         </section>
         `
         $("#output").html(formHTML)
-// /name description cost
+
+        const cityToVisit = document.getElementById("city-to-visit");
+        const locationToGo = document.getElementById("location-to-visit")
+        const expectedCost = document.getElementById("expected-cost")
+        const visaRequired = document.getElementById("visa-required")
+
+        const userInputForNewCity = {
+          name: cityToVisit,
+          visa_required: visaRequired
+        }
+        const userInputForNewPointOfinterest = {
+          placeId: 1,
+          name: locationToGo,
+          description: "",
+          cost: expectedCost,
+          review: "",
+          reviewcheck: false
+        }
+// /cityname locationname cost visa
   },
 
 
