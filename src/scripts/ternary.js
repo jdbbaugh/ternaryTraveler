@@ -4,8 +4,9 @@ import ternaryData from "./ternaryData";
 
 
 const ternary = {
-  displayPointsOfInterest () {
-    const userDefinedPlaceOfInterest = 1
+  displayPointsOfInterest (chosenLocation) {
+    const userDefinedPlaceOfInterest = Number(chosenLocation)
+    console.log(Number(chosenLocation), Number(userDefinedPlaceOfInterest))
 // this will need to be defined later by city picked in initial boot up
 
     const targetContainer = document.getElementById("output")

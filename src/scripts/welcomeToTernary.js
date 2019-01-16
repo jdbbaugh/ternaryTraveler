@@ -50,7 +50,7 @@ const welcomeToTernary = {
     })
     .then(places => {
       places.forEach(place => {
-        arrayOfPlaces.push(place.name)
+        arrayOfPlaces.push(`${place.name}-${place.id}`)
       })
       console.log(arrayOfPlaces)
       // let arrayOfPlaces = arrayOfPlaces

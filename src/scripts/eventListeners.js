@@ -5,9 +5,12 @@ import domComponents from "./domComponents";
 
 const eventListeners = {
   firstChoose () {
-    console.log("ya")
     const getSelectedLocation = document.getElementById("location-selection")
-    console.log(getSelectedLocation.value)
+    $("#output").empty()
+    const chosenLocation = getSelectedLocation.value.split("-")[1];
+    console.log(chosenLocation)
+    ternary.displayPointsOfInterest(chosenLocation);
+
 
   },
 
