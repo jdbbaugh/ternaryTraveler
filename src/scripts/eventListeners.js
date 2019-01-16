@@ -10,9 +10,11 @@ const eventListeners = {
     const chosenLocation = getSelectedLocation.value.split("-")[1];
     console.log(chosenLocation)
     ternary.displayPointsOfInterest(chosenLocation);
-
-
   },
+  firstAdd () {
+    console.log("addin")
+    ternary.createAddLocationForm()
+  }
 
 }
 

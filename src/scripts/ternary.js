@@ -61,6 +61,21 @@ const ternary = {
       }
     }))
   },
+  createAddLocationForm () {
+      console.log("begin")
+      let formHTML = `
+      <h1 class = "t-border">Make new event</h1>
+        <section class = "form">
+          <form action="" class = registerForm>
+            <input id = "regUserName" type="text" placeholder = "City To Visit" required>
+            <input id = "regEmail" type="email" placeholder = "Location To Visit" required>
+            <input id = "regPassword" type="password" placeholder = "Expected Cost" required>
+            <button id = "registerButton">Create Experience</button>
+        </section>
+        `
+        $("#output").html(formHTML)
+// /name description cost
+  },
 
 
 }
