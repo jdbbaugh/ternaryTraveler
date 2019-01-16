@@ -38,8 +38,14 @@ const eventListeners = {
       reviewcheck: false
     }
     console.log(userInputForNewCity, userInputForNewPointOfinterest)
-  }
+    ternaryData.connectToData({
+      "dataSet" : "places",
+      "fetchType" : "POST",
+      "dataBaseObject" : userInputForNewCity
 
+    })
+
+  },
 }
 
 export default eventListeners
