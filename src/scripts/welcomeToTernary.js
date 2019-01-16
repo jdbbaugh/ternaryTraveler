@@ -37,7 +37,7 @@ const welcomeToTernary = {
     })
     const eventForAdd = document.getElementById("add-button")
     eventForAdd.addEventListener("click", () => {
-      console.log("sadd")
+      eventListeners.firstAdd();
     })
 
     console.log("ya")
