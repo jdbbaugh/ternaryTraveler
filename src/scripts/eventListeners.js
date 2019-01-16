@@ -42,9 +42,13 @@ const eventListeners = {
       "dataSet" : "places",
       "fetchType" : "POST",
       "dataBaseObject" : userInputForNewCity
-
     })
 
+    ternaryData.connectToData({
+      "dataSet" : "interests",
+      "fetchType" : "POST",
+      "dataBaseObject" : userInputForNewPointOfinterest
+    })
   },
 }
 
