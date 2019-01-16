@@ -1,0 +1,64 @@
+*{
+  box-sizing:border-box;
+}
+body{
+  background-image:linear-gradient(rgba(0,0,0,0,0.6), rgba(0,0,0,0,0.6));
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  margin:0;
+  padding:0;
+  font-family:'Montserrat Alternates', sans-serif;
+  overflow:hidden;
+}
+/* =================================================================================== */
+/* FRIENDS MODAL */
+/* =================================================================================== */
+#friends__backdrop {
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+#friends__modal {
+  display: none;
+  position: fixed;
+  background: white;
+  padding: 10px;
+  width: 400px;
+  top: 100px;
+  left: calc(50% - 140px);
+  z-index: 1;
+  border-radius: 12px;
+}
+
+#friends__modal > h1 {
+  margin: 0;
+  font-size:20px;
+  color:black;
+  text-shadow: none;
+}
+
+#friends__modal button {
+  background: #43A047;
+  color: white;
+  border: 1px solid #43A047;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+#friends__modal button:hover,
+#friends__modal button:active {
+  background: rgb( 191, 162, 44);
+}
+
+#friends__modal button:focus {
+  outline: none;
+}
+
