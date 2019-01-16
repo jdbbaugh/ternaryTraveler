@@ -45,10 +45,29 @@ const eventListeners = {
     })
 
     ternaryData.connectToData({
-      "dataSet" : "interests",
-      "fetchType" : "POST",
-      "dataBaseObject" : userInputForNewPointOfinterest
+      "dataSet" : "places",
+      "fetchType" : "GET",
+      "dataBaseObject" : "",
+      "embedItem" : "?_embed=places"
     })
+    .then(places => {
+      places.forEach(place => {
+        console.log(place.name, cityToVisit.value)
+        if (place.name === cityToVisit.value) {
+          userInputForNewPointOfinterest.placeId = place.id;
+
+          ternaryData.connectToData({
+            "dataSet" : "interests",
+            "fetchType" : "POST",
+            "dataBaseObject" : userInputForNewPointOfinterest
+          })
+          $("#output").empty()
+          welcomeToTernary.welcomePage()
+          console.log("yea")
+        }
+      })
+    })
+
   },
 }
 
