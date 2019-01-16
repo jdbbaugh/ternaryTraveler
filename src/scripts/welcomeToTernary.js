@@ -3,6 +3,8 @@ import eventListeners from "./eventListeners";
 
 const welcomeToTernary = {
   welcomePage () {
+
+
     const targetContainer = document.getElementById("output")
     const targetAppSection = domComponents.createDomElement({
       elementType: "section",
@@ -12,6 +14,7 @@ const welcomeToTernary = {
       }
     })
     targetContainer.appendChild(targetAppSection)
+
 
     const usersFirstOptions = ["Choose Location", "Add Location"];
     usersFirstOptions.forEach(option => {
@@ -35,7 +38,7 @@ const welcomeToTernary = {
       console.log("sadd")
     })
 
-  }
+  },
 }
 
 export default welcomeToTernary

@@ -4,4 +4,4 @@ import welcomeToTernary from "./welcomeToTernary"
 
 // console.log("working")
 // ternary.displayPointsOfInterest()
-// welcomeToTernary.welcomePage()
+welcomeToTernary.welcomePage()

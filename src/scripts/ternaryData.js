@@ -1,5 +1,6 @@
 import ternary from "./ternary";
 
+
 const ternaryData = {
 
     connectToData(fetchObject) {

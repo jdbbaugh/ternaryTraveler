@@ -59,9 +59,7 @@ const ternary = {
         id: `location-cost-${locationToInteractWith.id}`
       }
     }))
-
-
-  }
+  },
 
 
 }
