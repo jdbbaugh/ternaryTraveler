@@ -1,5 +1,6 @@
 import domComponents from "./domComponents";
 import ternaryData from "./ternaryData";
+import eventListeners from "./eventListeners";
 
 
 
@@ -66,37 +67,27 @@ const ternary = {
       let formHTML = `
       <h1 class = "t-border">Make new event</h1>
         <section class = "form">
-          <form action="" class = registerForm>
-            <input id = "city-to-visit" type="text" placeholder = "City To Visit" required>
-            <input id = "location-to-visit" type="email" placeholder = "Location To Visit" required>
-            <input id = "expected-cost" type="password" placeholder = "Expected Cost" required>
+          <div action="" class = registerForm>
+            <input id = "city-to-visit" type="text" placeholder = "City To Visit">
+            <input id = "location-to-visit" type="text" placeholder = "Location To Visit">
+            <input id = "expected-cost" type="text" placeholder = "Expected Cost">
             <p>visa?</p>
             <select id="visa-required">
                 <option>true</option>
                 <option>false</option>
             </select>
             <button id = "registerButton">Create Experience</button>
+            </div>
         </section>
         `
         $("#output").html(formHTML)
 
-        const cityToVisit = document.getElementById("city-to-visit");
-        const locationToGo = document.getElementById("location-to-visit")
-        const expectedCost = document.getElementById("expected-cost")
-        const visaRequired = document.getElementById("visa-required")
+        const buttonForNewLocation = document.getElementById("registerButton");
+        buttonForNewLocation.addEventListener("click", () => {
+          eventListeners.submitNewLocationForm()
+        })
 
-        const userInputForNewCity = {
-          name: cityToVisit,
-          visa_required: visaRequired
-        }
-        const userInputForNewPointOfinterest = {
-          placeId: 1,
-          name: locationToGo,
-          description: "",
-          cost: expectedCost,
-          review: "",
-          reviewcheck: false
-        }
+
 // /cityname locationname cost visa
   },
 

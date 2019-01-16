@@ -14,6 +14,30 @@ const eventListeners = {
   firstAdd () {
     console.log("addin")
     ternary.createAddLocationForm()
+  },
+  submitNewLocationForm () {
+    console.log("submitThis")
+    const cityToVisit = document.getElementById("city-to-visit");
+    const locationToGo = document.getElementById("location-to-visit")
+    const expectedCost = document.getElementById("expected-cost")
+    const visaRequired = document.getElementById("visa-required")
+
+    const visaAsBoolean = (visaRequired == "true")
+    console.log(visaAsBoolean)
+
+    const userInputForNewCity = {
+      name: cityToVisit.value,
+      visa_required: visaAsBoolean
+    }
+    const userInputForNewPointOfinterest = {
+      placeId: 1,
+      name: locationToGo.value,
+      description: "",
+      cost: expectedCost.value,
+      review: "",
+      reviewcheck: false
+    }
+    console.log(userInputForNewCity, userInputForNewPointOfinterest)
   }
 
 }
