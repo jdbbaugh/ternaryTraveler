@@ -5,3 +5,4 @@ import welcomeToTernary from "./welcomeToTernary"
 // console.log("working")
 // ternary.displayPointsOfInterest()
 welcomeToTernary.welcomePage()
+// eventListeners.submitNewLocationForm()

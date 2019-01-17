@@ -29,44 +29,42 @@ const eventListeners = {
       name: cityToVisit.value,
       visa_required: visaAsBoolean
     }
-    const userInputForNewPointOfinterest = {
-      placeId: 1,
-      name: locationToGo.value,
-      description: "",
-      cost: expectedCost.value,
-      review: "",
-      reviewcheck: false
-    }
-    console.log(userInputForNewCity, userInputForNewPointOfinterest)
+    // console.log(userInputForNewCity, userInputForNewPointOfinterest)
     ternaryData.connectToData({
       "dataSet" : "places",
       "fetchType" : "POST",
       "dataBaseObject" : userInputForNewCity
-    })
+    }).then(taskComplete => {
 
-    ternaryData.connectToData({
-      "dataSet" : "places",
-      "fetchType" : "GET",
-      "dataBaseObject" : "",
-      "embedItem" : "?_embed=places"
-    })
-    .then(places => {
-      places.forEach(place => {
-        console.log(place.name, cityToVisit.value)
-        if (place.name === cityToVisit.value) {
-          userInputForNewPointOfinterest.placeId = place.id;
+      ternaryData.connectToData({
+        "dataSet" : "places",
+        "fetchType" : "GET",
+        "dataBaseObject" : "",
+        "embedItem" : "?_embed=places"
+      }).then(places => {
+        console.log(places)
+        places.forEach(place => {
+          if (place.name === cityToVisit.value) {
+            console.log("you did it", place.id)
+            const userInputForNewPointOfinterest = {
+              placeId: place.id,
+              name: locationToGo.value,
+              description: "",
+              cost: expectedCost.value,
+              review: "",
+              reviewcheck: false
+            }
+            ternaryData.connectToData({
+              "dataSet" : "interests",
+              "fetchType" : "POST",
+              "dataBaseObject" : userInputForNewPointOfinterest
+            }).then($("#output").empty())
 
-          ternaryData.connectToData({
-            "dataSet" : "interests",
-            "fetchType" : "POST",
-            "dataBaseObject" : userInputForNewPointOfinterest
-          })
-          $("#output").empty()
-          welcomeToTernary.welcomePage()
-          console.log("yea")
-        }
+          }
+        })
       })
     })
+
 
   },
 }
