@@ -58,7 +58,10 @@ const eventListeners = {
               "dataSet" : "interests",
               "fetchType" : "POST",
               "dataBaseObject" : userInputForNewPointOfinterest
-            }).then($("#output").empty())
+            }).then(call => {
+              $("#output").empty()
+              welcomeToTernary.welcomePage()
+            })
 
           }
         })
