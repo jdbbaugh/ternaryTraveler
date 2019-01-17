@@ -25,7 +25,7 @@ const welcomeToTernary = {
     const usersFirstOptions = ["Choose Location", "Add Location"];
     usersFirstOptions.forEach(option => {
       let optionIdentifier = option.split(" ")[0].toLowerCase()
-      console.log(optionIdentifier)
+      // console.log(optionIdentifier)
       targetAppSection.appendChild(domComponents.createDomElement({
         elementType: "button",
         content: option,
@@ -39,8 +39,6 @@ const welcomeToTernary = {
     eventForAdd.addEventListener("click", () => {
       eventListeners.firstAdd();
     })
-
-    console.log("ya")
     let arrayOfPlaces = []
     ternaryData.connectToData({
       "dataSet" : "places",
@@ -52,7 +50,7 @@ const welcomeToTernary = {
       places.forEach(place => {
         arrayOfPlaces.push(`${place.name}-${place.id}`)
       })
-      console.log(arrayOfPlaces)
+      // console.log(arrayOfPlaces)
       // let arrayOfPlaces = arrayOfPlaces
       // ===================================================================================
               //create section container to be parent of forms
