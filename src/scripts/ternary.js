@@ -52,6 +52,13 @@ const ternary = {
       attributes: {
         id: `location-description-${locationToInteractWith.id}`
       }
+    }));
+    locationContainer.appendChild(domComponents.createDomElement({
+      elementType: "button",
+      content: "Edit Description",
+      attributes: {
+        id: "edit-button"
+      }
     }))
     locationContainer.appendChild(domComponents.createDomElement({
       elementType: "p",
@@ -60,7 +67,44 @@ const ternary = {
       attributes: {
         id: `location-cost-${locationToInteractWith.id}`
       }
+    }));
+    locationContainer.appendChild(domComponents.createDomElement({
+      elementType: "button",
+      content: "Edit Cost",
+      attributes: {
+        id: "cost-edit-button"
+      }
     }))
+    locationContainer.appendChild(domComponents.createDomElement({
+      elementType: "button",
+      content: "Delete This Location",
+      attributes: {
+        id: "delete-button"
+      }
+    }))
+    locationContainer.appendChild(domComponents.createDomElement({
+      elementType: "button",
+      content: "Return To Menu",
+      attributes: {
+        id: "return-button"
+      }
+    }))
+    const returnHomeButton = document.getElementById("return-button")
+    returnHomeButton.addEventListener("click", () => {
+      eventListeners.returnHome()
+    })
+    const editDescriptionButton = document.getElementById("edit-button")
+    editDescriptionButton.addEventListener("click", () => {
+      eventListeners.editLocationDescription()
+    })
+    const editCostButton = document.getElementById("cost-edit-button")
+    editCostButton.addEventListener("click", () => {
+      eventListeners.editLocationCost()
+    })
+    const deleteLocationButton = document.getElementById("delete-button")
+    deleteLocationButton.addEventListener("click", () => {
+      eventListeners.deleteLocation()
+    })
   },
   createAddLocationForm () {
       console.log("begin")

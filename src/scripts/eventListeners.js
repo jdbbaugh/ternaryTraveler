@@ -67,9 +67,20 @@ const eventListeners = {
         })
       })
     })
-
-
   },
+  returnHome () {
+    $("#output").empty()
+    welcomeToTernary.welcomePage()
+  },
+  editLocationDescription () {
+    console.log("you wanna edit description?")
+  },
+  editLocationCost () {
+    console.log("you wanna edit cost?")
+  },
+  deleteLocation () {
+    console.log("you gonna delete ths?")
+  }
 }
 
 export default eventListeners
